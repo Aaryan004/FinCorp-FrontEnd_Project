@@ -1,0 +1,101 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FAAB36; /* Background color for the entire page */
+    color: #333; /* Default text color for the page */
+}
+
+header {
+    background-color: #249EA0; /* Background color for the header */
+    color: #fff; /* Text color for the header */
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background-color: #FFD700; /* Background color for the navigation bar (different from the header) */
+    padding: 10px; /* Add padding around the navigation bar */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 10px; /* Set equal margin for list items */
+}
+
+nav a {
+    text-decoration: none;
+    color: #333; /* Text color for the list items */
+    padding: 10px; /* Add padding to make the clickable area larger */
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #FFA500; /* Highlight the entire navigation bar on hover with a different color */
+    color: #fff; /* Text color for the list items when hovered */
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* Background color for the main content area */
+}
+
+section h2 {
+    font-size: 24px;
+    color: #249EA0; /* Set the heading color to match the header color */
+}
+
+.recommendations {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.fund-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 45%;
+}
+
+.fund-card h3 {
+    font-size: 18px;
+    color: #249EA0; /* Set the heading color to match the header color */
+}
+
+.fund-card p {
+    font-size: 14px;
+    color: #555; /* Text color for the content */
+}
+
+.fund-card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #249EA0; /* Set the button background color to match the header color */
+    color: #fff; /* Text color for the button */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    background-color: #249EA0; /* Set the footer background color to match the header color */
+    color: #fff; /* Text color for the footer */
+    padding: 10px;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles3.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="main2.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="#Services">Services</a></li>
+                <li><a href="#footer">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="quote-container">
+        <blockquote id="quote">
+            "Finance is not merely about making money. It's about achieving our deep goals and protecting the fruits of our labor."
+            <cite>Robert J. Shiller</cite>
+        </blockquote>
+    </div>
+    <main>
+        <section class="button" id = "Services" >
+        <a href="SIP.html">
+            <h2>SIP Calculator</h2>
+            <p>Investment Projection and Planning Tool</p>
+        </a>
+        </section>
+        <section class="button">
+            <a href="Wealth_Management.html">
+            <h2>Monthly Wealth Management</h2>
+            <p>Financial Growth Target and Opportunities</p>
+            </a>
+        </section>
+        <section class="button">
+            <a href="#">
+            <h2>Mutual Fund Recommendations</h2>
+            <p> Smart Investment Advice and Strategies</p>
+            </a>
+        </section>
+        <section class="button">
+            <a href="Stock_Analysis.html">
+            <h2>Stock Analysis</h2>
+            <p>In-Depth insight of top stocks</p>
+            </a>
+        </section>
+    </main>
+    <footer id = "footer">
+        <p>&copy; 2023 Team Script Slingers</p>
+    </footer>
+    <script>
+        const quotes = [
+            "Finance is not merely about making money. It's about achieving our deep goals and protecting the fruits of our labor. - Robert J. Shiller",
+            "A market downturn does not bother us. It is an opportunity to increase our ownership of great companies with great management at good prices. - Warren Buffett",
+            "With a good perspective on history, we can have a better understanding of the past and present, and thus a clear vision of the future. — Carlos Slim Helu",
+            "I will tell you how to become rich. Close the doors. Be fearful when others are greedy. Be greedy when others are fearful. — Warren Buffett",
+            "It is not how much money you make, but how much money you keep, how hard it works for you, and how many generations you keep it for. — Robert Kiyosaki"
+        ];
+
+        let currentQuoteIndex = 0;
+        const quoteElement = document.getElementById("quote");
+
+        function updateQuote() {
+            quoteElement.classList.remove("fade-in");
+            setTimeout(() => {
+                quoteElement.innerHTML = quotes[currentQuoteIndex];
+                currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+                quoteElement.classList.add("fade-in");
+            }, 500);
+        }
+
+        setInterval(updateQuote, 5000);
+
+        updateQuote();
+    </script>
+</body>
+</html>

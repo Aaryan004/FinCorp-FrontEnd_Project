@@ -1,0 +1,148 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('background2.jpg'); 
+    background-size: cover;
+    color: #333; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo {
+    margin: 0;
+}
+
+header { 
+    background-color: #fff;
+    color: #fff;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    width: 100%;
+}
+
+nav {
+    background-color: #fff; 
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav li {
+    padding-right : 20px;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    transition: background-color 0.3s;
+    font-weight: bold; 
+    font-size: 18px; 
+    position: relative; 
+}
+
+nav a:hover {
+    color: #333;
+    font-size: 20px;
+}
+
+nav a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px; 
+    background-color: #333; 
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s; 
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+section {
+    background-color: #00394d; 
+    border: 1px solid #00394d;
+    border-radius: 100px;
+    padding: 10px;
+    width: 45%;
+    margin: 10px;
+}
+
+section h2 {
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+}
+
+section p {
+    font-size: 14px;
+    color: #fff; 
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    background-color: #00001a; 
+    color: #fff; 
+    padding: 10px;
+    width: 100%;
+}
+.button {
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: #00ace6; 
+    color: #fff;
+    transform: scale(1.05);
+}
+.quote-container {
+    margin: 0;
+    background-color: #b3b300;
+    text-align: center;
+    padding: 20px;
+    color : #fff;
+    transition: opacity 0.5s;
+}
+.quote-container blockquote {
+    opacity: 0;
+    transform: translateX(0);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.quote-container blockquote.fade-in {
+    opacity: 1;
+    transform: translateX(20px);
+}
+
+blockquote {
+    font-size: 24px;
+    font-style: italic;
+}
+
+cite {
+    display: block;
+    margin-top: 10px;
+    font-size: 18px;
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles3.css">
+        <style>
+            body {
+                text-align: center;
+                color: #fff;
+            }
+    
+            #main-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 80vh;
+            }
+    
+            #managementRecommendationForm {
+                max-width: 400px;
+                margin: 0 auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+            }
+    
+            #stockRecommendations {
+                text-align: center;
+                list-style-type: none;
+                padding: 0;
+            }
+    
+            #stockRecommendations li {
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="logo.png">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="main2.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div id="main-content">
+                <h1>Wealth Management Recommendation</h1>
+                <form id="managementRecommendationForm">
+                    <label for="income">Monthly Income (₹):</label>
+                    <input type="number" id="income" required><br><br>
+    
+                    <label for="expenses">Monthly Expenses (₹):</label>
+                    <input type="number" id="expenses" required><br><br>
+    
+                    <button type="button" onclick="recommendManagementPlan()">Get Recommendation</button>
+                </form>
+    
+                <p id="managementResult"></p>
+    
+                <h1>Stock Recommendation</h1>
+                <button type="button" onclick="getStockRecommendations()">Get Stock Recommendations</button>
+    
+                <ul id="stockRecommendations"></ul>
+            </div>
+    <script>
+        function recommendManagementPlan() {
+            var income = parseFloat(document.getElementById("income").value);
+            var expenses = parseFloat(document.getElementById("expenses").value);
+
+            if (income > expenses) {
+                document.getElementById("managementResult").textContent = "You have a surplus. Consider saving or investing.";
+            } else if (income < expenses) {
+                document.getElementById("managementResult").textContent = "You have a deficit. Consider reducing expenses or finding additional income sources.";
+            } else {
+                document.getElementById("managementResult").textContent = "Your income matches your expenses. Ensure proper budgeting.";
+            }
+        }
+
+        function getStockRecommendations() {
+            const apiKey = '42R9B9TT46WPFMQY'; 
+            const income = parseFloat(document.getElementById("income").value);        
+            fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=5min&apikey=${apiKey}`)
+                .then(response => response.json())
+                .then(data => {
+                    const stockRecommendationsElement = document.getElementById("stockRecommendations");
+                    stockRecommendationsElement.innerHTML = '';                    
+                    const stockData = {
+                        "RELIANCE": 2223,
+                        "HDFC": 179,
+                        "INFOSYS": 1360,
+                        "GRASIM": 1854,
+                        "AXISBANK": 974,
+                        "TCS" : 3356,
+                        "ICICI BANK" : 914,
+                        "HUL": 2478,
+                        "ITC": 433,
+                        "BHARTI AIRTEL": 914,
+                        "HCL TECH": 1263,
+                        "ASIAN PAINTS": 2950,
+                        "AXIS BANK": 987,
+                        "MARUTI SUZUKI INDIA": 10524,
+                        "L&T": 2902
+                    };
+                    const recommendations = [];
+                    for (const symbol in stockData) {
+                        const stockPrice = stockData[symbol];
+                        if ((stockPrice*7) >= (income - (0.8*income)) && (stockPrice*7) <= (income + (0.8*income))) {
+                            recommendations.push(symbol);
+                        }
+                    }
+                    if (recommendations.length > 0) {
+                        recommendations.slice(0, 15).forEach(symbol => {
+                            const listItem = document.createElement("li");
+                            listItem.textContent = symbol;
+                            stockRecommendationsElement.appendChild(listItem);
+                        });
+                    } else {
+                        stockRecommendationsElement.textContent = "No stock recommendations within the income range.";
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        }
+    </script>
+    </main>
+    <footer id = "footer">
+        <p>&copy; 2023 Team Script Slingers</p>
+    </footer>
+</body>
+</html>

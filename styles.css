@@ -1,0 +1,97 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background-color: #ccc; /* Set the background color for the navigation bar to light grey */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Display list items horizontally */
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333; /* Text color for the list items */
+    padding: 10px; /* Add padding to make the clickable area larger */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+nav a:hover {
+    background-color: #555; /* Highlight the entire navigation bar on hover */
+    color: #fff; /* Text color for the list items when hovered */
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.recommendations {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.fund-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 45%;
+}
+
+.fund-card h3 {
+    font-size: 18px;
+}
+
+.fund-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+.fund-card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
